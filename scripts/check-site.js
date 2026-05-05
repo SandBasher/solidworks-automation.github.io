@@ -11,12 +11,13 @@ function walk(dir) {
     else if (p.endsWith(".html")) htmlFiles.push(p);
   }
 }
-function existsHref(href) {
+function existsHref(file, href) {
   if (/^(https?:|mailto:|#)/.test(href)) return true;
   const clean = href.split("#")[0];
   if (!clean) return true;
-  const rel = clean.startsWith("/") ? clean.slice(1) : clean;
-  const target = path.join(root, rel);
+  const target = clean.startsWith("/")
+    ? path.join(root, clean.slice(1))
+    : path.resolve(path.dirname(file), clean);
   if (fs.existsSync(target)) return true;
   if (fs.existsSync(target + ".html")) return true;
   if (fs.existsSync(path.join(target, "index.html"))) return true;
@@ -27,7 +28,7 @@ let failures = [];
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
-    if (!existsHref(match[1])) failures.push(path.relative(root, file) + " -> " + match[1]);
+    if (!existsHref(file, match[1])) failures.push(path.relative(root, file) + " -> " + match[1]);
   }
 }
 const macroSources = fs.readdirSync(path.join(root, "macros", "src")).filter((f) => f.endsWith(".bas"));
