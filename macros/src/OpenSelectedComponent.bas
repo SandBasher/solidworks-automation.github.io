@@ -2,7 +2,7 @@ Attribute VB_Name = "OpenSelectedComponent"
 Option Explicit
 
 ' Open Selected Component
-' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: Active assembly with one selected component
 

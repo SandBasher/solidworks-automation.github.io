@@ -2,7 +2,7 @@ Attribute VB_Name = "PackAndGoCustomPropertyNaming"
 Option Explicit
 
 ' Pack and Go with Prefix/Suffix or Custom-Property Naming
-' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: Open saved SOLIDWORKS document; Destination folder; Optional prefix/suffix
 

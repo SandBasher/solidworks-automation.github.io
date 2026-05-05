@@ -2,7 +2,7 @@ Attribute VB_Name = "BatchCustomPropertyUpdateFromCsv"
 Option Explicit
 
 ' Batch Custom Property Reader/Writer from CSV
-' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: CSV with FilePath, Configuration, PropertyName, Value columns
 

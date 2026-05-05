@@ -2,7 +2,7 @@ Attribute VB_Name = "CollectReleaseDeliverables"
 Option Explicit
 
 ' Collect Referenced Release Deliverables
-' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: Open assembly or drawing; Destination folder
 
