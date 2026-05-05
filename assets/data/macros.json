@@ -1,0 +1,654 @@
+[
+  {
+    "slug": "export-drawing-pdf-dxf-step",
+    "file": "ExportDrawingPdfDxfStep.bas",
+    "title": "Export Drawing to PDF, DXF/DWG and STEP",
+    "shortTitle": "PDF + DXF/DWG + STEP exporter",
+    "category": "Export",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing"
+    ],
+    "outputs": [
+      "PDF",
+      "DXF",
+      "DWG",
+      "STEP"
+    ],
+    "keywords": "solidworks macro save pdf dxf step, solidworks export drawing pdf dxf step macro",
+    "summary": "Exports the active drawing to PDF, DXF and DWG, then exports the first referenced model to STEP with filename parts from custom properties.",
+    "bestFor": [
+      "Release packs",
+      "Supplier handoff",
+      "Revision-controlled exports",
+      "One-click drawing deliverables"
+    ],
+    "inputs": [
+      "Open .SLDDRW drawing",
+      "Referenced part or assembly",
+      "Optional PartNo, Revision and Description custom properties"
+    ],
+    "filenameRules": "{PartNo}_{Revision}_{Description}; falls back to the drawing filename when properties are missing.",
+    "limitations": [
+      "Only the active drawing is processed.",
+      "The STEP file is exported from the first referenced model found in the drawing.",
+      "DXF/DWG output depends on SOLIDWORKS drawing export settings."
+    ]
+  },
+  {
+    "slug": "batch-export-drawings-pdf",
+    "file": "BatchExportDrawingsToPdf.bas",
+    "title": "Batch Export Drawings to PDF",
+    "shortTitle": "Batch drawing PDF export",
+    "category": "Drawing",
+    "difficulty": "Beginner",
+    "documentTypes": [
+      "Drawing"
+    ],
+    "outputs": [
+      "PDF"
+    ],
+    "keywords": "solidworks batch export drawings to pdf macro, solidworks save drawing as pdf macro",
+    "summary": "Selects a folder, opens every .SLDDRW file in it, rebuilds the drawing and saves a PDF into a PDF subfolder.",
+    "bestFor": [
+      "Drawing release folders",
+      "Vendor PDF packs",
+      "Nightly drawing refreshes"
+    ],
+    "inputs": [
+      "Folder containing .SLDDRW files"
+    ],
+    "filenameRules": "Uses the drawing filename and writes into a PDF subfolder.",
+    "limitations": [
+      "Processes one folder level.",
+      "Drawings with missing references may require user repair before export."
+    ]
+  },
+  {
+    "slug": "sheet-metal-flat-pattern-dxf",
+    "file": "SheetMetalFlatPatternDxfBatch.bas",
+    "title": "Sheet-Metal Flat Pattern DXF Batch Export",
+    "shortTitle": "Sheet-metal DXF batch export",
+    "category": "Sheet Metal",
+    "difficulty": "Advanced",
+    "documentTypes": [
+      "Assembly",
+      "Part"
+    ],
+    "outputs": [
+      "DXF"
+    ],
+    "keywords": "solidworks sheet metal dxf export macro, solidworks flat pattern dxf batch export",
+    "summary": "Traverses the active assembly or part and exports sheet-metal flat patterns as DXF files using model properties where available.",
+    "bestFor": [
+      "Laser cutting",
+      "Fabrication handoff",
+      "Assembly-level sheet-metal release packs"
+    ],
+    "inputs": [
+      "Open sheet-metal part or assembly",
+      "Saved components"
+    ],
+    "filenameRules": "{PartNo}_{Revision}_{Material}_{Thickness}; falls back to component filename.",
+    "limitations": [
+      "Requires parts to contain valid flat-pattern features.",
+      "Complex multi-body sheet-metal parts may need shop-specific review.",
+      "DXF options follow the installed SOLIDWORKS defaults."
+    ]
+  },
+  {
+    "slug": "export-configurations-step",
+    "file": "ExportConfigurationsToStep.bas",
+    "title": "Export All Configurations to STEP",
+    "shortTitle": "Configurations to STEP",
+    "category": "Export",
+    "difficulty": "Beginner",
+    "documentTypes": [
+      "Part",
+      "Assembly"
+    ],
+    "outputs": [
+      "STEP"
+    ],
+    "keywords": "solidworks export configurations to step macro",
+    "summary": "Exports every configuration of the active part or assembly to a separate STEP file.",
+    "bestFor": [
+      "Configured vendor parts",
+      "Family-of-parts releases",
+      "Supplier STEP packs"
+    ],
+    "inputs": [
+      "Open saved .SLDPRT or .SLDASM"
+    ],
+    "filenameRules": "{filename}_{configuration}.step with unsafe filename characters removed.",
+    "limitations": [
+      "Suppressed or invalid configurations may fail export.",
+      "Large assemblies can take time to rebuild between configurations."
+    ]
+  },
+  {
+    "slug": "export-configurations-stl",
+    "file": "ExportConfigurationsToStl.bas",
+    "title": "Export All Configurations to STL",
+    "shortTitle": "Configurations to STL",
+    "category": "Export",
+    "difficulty": "Beginner",
+    "documentTypes": [
+      "Part",
+      "Assembly"
+    ],
+    "outputs": [
+      "STL"
+    ],
+    "keywords": "solidworks export configurations to stl macro",
+    "summary": "Exports each configuration of the active part or assembly as an STL file.",
+    "bestFor": [
+      "3D printing",
+      "Prototype sharing",
+      "Configured product previews"
+    ],
+    "inputs": [
+      "Open saved .SLDPRT or .SLDASM"
+    ],
+    "filenameRules": "{filename}_{configuration}.stl.",
+    "limitations": [
+      "Uses the current SOLIDWORKS STL export options.",
+      "Hidden bodies and suppressed features follow the active configuration state."
+    ]
+  },
+  {
+    "slug": "multi-format-active-document-exporter",
+    "file": "MultiFormatActiveDocumentExporter.bas",
+    "title": "Multi-Format Active Document Exporter",
+    "shortTitle": "Active document multi-export",
+    "category": "Export",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing",
+      "Part",
+      "Assembly"
+    ],
+    "outputs": [
+      "PDF",
+      "DXF",
+      "DWG",
+      "STEP",
+      "STL"
+    ],
+    "keywords": "solidworks export multiple formats macro",
+    "summary": "Exports the active document into the formats that make sense for its document type.",
+    "bestFor": [
+      "Personal export buttons",
+      "Quick vendor output",
+      "Mixed document workflows"
+    ],
+    "inputs": [
+      "Open saved SOLIDWORKS document"
+    ],
+    "filenameRules": "Uses the active document filename and creates an Exports subfolder.",
+    "limitations": [
+      "Drawing exports PDF/DXF/DWG; part and assembly exports STEP/STL.",
+      "Format settings come from the current SOLIDWORKS options."
+    ]
+  },
+  {
+    "slug": "bom-export-excel-csv",
+    "file": "BomTableToCsvExcel.bas",
+    "title": "BOM and Table Export to CSV or Excel",
+    "shortTitle": "BOM/table to CSV",
+    "category": "BOM",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing",
+      "Assembly"
+    ],
+    "outputs": [
+      "CSV",
+      "XLSX"
+    ],
+    "keywords": "solidworks bom export excel macro, solidworks table to csv macro",
+    "summary": "Finds BOM or general tables in the active drawing or assembly and exports their visible cells to CSV, with optional Excel automation.",
+    "bestFor": [
+      "Purchasing handoff",
+      "ERP import preparation",
+      "BOM audits"
+    ],
+    "inputs": [
+      "Open drawing or assembly containing BOM/table annotations"
+    ],
+    "filenameRules": "{document}_table_{index}.csv.",
+    "limitations": [
+      "Exports visible table text, not resolved ERP data.",
+      "Excel export requires Microsoft Excel to be installed."
+    ]
+  },
+  {
+    "slug": "custom-property-manager",
+    "file": "BatchCustomPropertyUpdateFromCsv.bas",
+    "title": "Batch Custom Property Reader/Writer from CSV",
+    "shortTitle": "CSV custom property update",
+    "category": "Custom Properties",
+    "difficulty": "Advanced",
+    "documentTypes": [
+      "Part",
+      "Assembly",
+      "Drawing"
+    ],
+    "outputs": [
+      "Updated custom properties"
+    ],
+    "keywords": "solidworks custom properties macro, solidworks batch edit custom properties",
+    "summary": "Reads a CSV file containing file paths, configuration names and property values, then updates SOLIDWORKS custom properties.",
+    "bestFor": [
+      "Part number cleanup",
+      "Revision property updates",
+      "Title block data repair"
+    ],
+    "inputs": [
+      "CSV with FilePath, Configuration, PropertyName, Value columns"
+    ],
+    "filenameRules": "Does not export files; writes custom properties to the listed documents.",
+    "limitations": [
+      "Always test on copied files first.",
+      "CSV parsing supports quoted fields but should be kept simple for production use."
+    ]
+  },
+  {
+    "slug": "export-with-custom-property-filename",
+    "file": "ExportWithCustomPropertyFilename.bas",
+    "title": "Export PDF/DXF/STEP with Filename from Custom Properties",
+    "shortTitle": "Custom-property filename export",
+    "category": "Custom Properties",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing",
+      "Part",
+      "Assembly"
+    ],
+    "outputs": [
+      "PDF",
+      "DXF",
+      "STEP"
+    ],
+    "keywords": "solidworks save as pdf with revision macro, solidworks filename from custom property macro",
+    "summary": "Builds export filenames from PartNo, Revision and Description custom properties instead of raw SOLIDWORKS filenames.",
+    "bestFor": [
+      "Controlled releases",
+      "Vendor filenames",
+      "Drawing-to-model naming consistency"
+    ],
+    "inputs": [
+      "Open saved SOLIDWORKS document",
+      "Optional PartNo, Revision and Description custom properties"
+    ],
+    "filenameRules": "{PartNo}_{Revision}_{Description}; missing values are skipped.",
+    "limitations": [
+      "Part and assembly documents export STEP only.",
+      "Drawing documents export PDF and DXF."
+    ]
+  },
+  {
+    "slug": "open-associated-drawing",
+    "file": "OpenAssociatedDrawing.bas",
+    "title": "Open Associated Drawing",
+    "shortTitle": "Open associated drawing",
+    "category": "Assembly Navigation",
+    "difficulty": "Beginner",
+    "documentTypes": [
+      "Part",
+      "Assembly",
+      "Drawing"
+    ],
+    "outputs": [
+      "Opened drawing"
+    ],
+    "keywords": "solidworks open associated drawing macro",
+    "summary": "Opens the likely drawing for the active model or selected assembly component by checking same-folder and configured search paths.",
+    "bestFor": [
+      "Daily navigation",
+      "Assembly review",
+      "Fast drawing lookup"
+    ],
+    "inputs": [
+      "Active model or selected component"
+    ],
+    "filenameRules": "Looks for matching .SLDDRW files using the model base filename.",
+    "limitations": [
+      "Cannot guarantee matches when drawings use unrelated names.",
+      "Additional search folders can be added in the macro constants."
+    ]
+  },
+  {
+    "slug": "open-selected-component",
+    "file": "OpenSelectedComponent.bas",
+    "title": "Open Selected Component",
+    "shortTitle": "Open selected component",
+    "category": "Assembly Navigation",
+    "difficulty": "Beginner",
+    "documentTypes": [
+      "Assembly"
+    ],
+    "outputs": [
+      "Opened component"
+    ],
+    "keywords": "solidworks open selected component macro",
+    "summary": "Opens the selected assembly component in its own SOLIDWORKS window.",
+    "bestFor": [
+      "Assembly cleanup",
+      "Fast part editing",
+      "Reviewing vendor components"
+    ],
+    "inputs": [
+      "Active assembly with one selected component"
+    ],
+    "filenameRules": "No file export.",
+    "limitations": [
+      "Requires a component selection, not just a face or edge selection."
+    ]
+  },
+  {
+    "slug": "open-parent-assembly",
+    "file": "OpenParentAssembly.bas",
+    "title": "Open Parent Assembly Candidate",
+    "shortTitle": "Open parent assembly",
+    "category": "Assembly Navigation",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Part",
+      "Assembly"
+    ],
+    "outputs": [
+      "Opened assembly"
+    ],
+    "keywords": "solidworks open parent assembly macro, solidworks where used search",
+    "summary": "Searches a selected folder for assemblies that reference the active model and opens the first candidate.",
+    "bestFor": [
+      "Where-used checks",
+      "Design context recovery",
+      "Part-to-assembly navigation"
+    ],
+    "inputs": [
+      "Open saved part/assembly",
+      "Folder to scan for .SLDASM files"
+    ],
+    "filenameRules": "No export files created.",
+    "limitations": [
+      "Folder scanning can be slow on very large workspaces.",
+      "For indexed where-used across a workspace, use Solidise."
+    ]
+  },
+  {
+    "slug": "pack-and-go-custom-property",
+    "file": "PackAndGoCustomPropertyNaming.bas",
+    "title": "Pack and Go with Prefix/Suffix or Custom-Property Naming",
+    "shortTitle": "Pack and Go naming",
+    "category": "Release Package",
+    "difficulty": "Advanced",
+    "documentTypes": [
+      "Part",
+      "Assembly",
+      "Drawing"
+    ],
+    "outputs": [
+      "Copied project set"
+    ],
+    "keywords": "solidworks pack and go custom property macro",
+    "summary": "Runs Pack and Go into a selected folder and applies prefix/suffix naming, with a hook for custom-property based names.",
+    "bestFor": [
+      "Project copies",
+      "Supplier packages",
+      "Revision snapshots"
+    ],
+    "inputs": [
+      "Open saved SOLIDWORKS document",
+      "Destination folder",
+      "Optional prefix/suffix"
+    ],
+    "filenameRules": "Uses user prefix/suffix around the original filename in v1.",
+    "limitations": [
+      "Custom-property naming is conservative to avoid broken references.",
+      "Always inspect the Pack and Go result before releasing."
+    ]
+  },
+  {
+    "slug": "collect-release-files",
+    "file": "CollectReleaseDeliverables.bas",
+    "title": "Collect Referenced Release Deliverables",
+    "shortTitle": "Collect release files",
+    "category": "Release Package",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Assembly",
+      "Drawing"
+    ],
+    "outputs": [
+      "Copied PDF",
+      "DXF",
+      "DWG",
+      "STEP"
+    ],
+    "keywords": "solidworks collect referenced drawings pdf dxf macro",
+    "summary": "Copies already-generated deliverables for referenced files into one release folder.",
+    "bestFor": [
+      "Release package assembly",
+      "Supplier zip preparation",
+      "Final document checks"
+    ],
+    "inputs": [
+      "Open assembly or drawing",
+      "Destination folder"
+    ],
+    "filenameRules": "Collects files with matching base filenames and PDF/DXF/DWG/STEP extensions.",
+    "limitations": [
+      "Does not generate missing deliverables.",
+      "Searches same folders as referenced models by default."
+    ]
+  },
+  {
+    "slug": "rebuild-drawings-before-export",
+    "file": "RebuildDrawingsBeforeExport.bas",
+    "title": "Rebuild Drawings Before PDF Export",
+    "shortTitle": "Rebuild drawings then export",
+    "category": "Drawing",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing"
+    ],
+    "outputs": [
+      "PDF"
+    ],
+    "keywords": "solidworks rebuild drawings before pdf export macro",
+    "summary": "Batch opens drawings from a selected folder, rebuilds them and exports fresh PDFs.",
+    "bestFor": [
+      "Pre-release drawing refresh",
+      "Title block update checks",
+      "Drawing batch QA"
+    ],
+    "inputs": [
+      "Folder containing .SLDDRW files"
+    ],
+    "filenameRules": "Exports to RebuiltPDF subfolder using drawing filenames.",
+    "limitations": [
+      "May expose missing references or rebuild errors that need manual repair."
+    ]
+  },
+  {
+    "slug": "export-drawing-sheets-separate-pdf",
+    "file": "ExportDrawingSheetsSeparatePdf.bas",
+    "title": "Export Each Drawing Sheet as a Separate PDF",
+    "shortTitle": "Sheets to separate PDFs",
+    "category": "Drawing",
+    "difficulty": "Beginner",
+    "documentTypes": [
+      "Drawing"
+    ],
+    "outputs": [
+      "PDF"
+    ],
+    "keywords": "solidworks export drawing sheets separate pdf macro",
+    "summary": "Exports every sheet in the active drawing to its own PDF file.",
+    "bestFor": [
+      "Shop-floor sheet packets",
+      "Vendor sheet-by-sheet sharing",
+      "Large multi-sheet drawings"
+    ],
+    "inputs": [
+      "Open .SLDDRW drawing"
+    ],
+    "filenameRules": "{drawing}_{sheet}.pdf.",
+    "limitations": [
+      "Uses the active drawing's sheet export behavior.",
+      "Very long sheet names are sanitized for Windows filenames."
+    ]
+  },
+  {
+    "slug": "hide-show-reference-geometry",
+    "file": "HideShowReferenceGeometry.bas",
+    "title": "Hide or Show Sketches, Planes, Origins and Axes",
+    "shortTitle": "Toggle reference geometry",
+    "category": "Drawing Cleanup",
+    "difficulty": "Beginner",
+    "documentTypes": [
+      "Part",
+      "Assembly",
+      "Drawing"
+    ],
+    "outputs": [
+      "Updated visibility"
+    ],
+    "keywords": "solidworks hide planes sketches macro",
+    "summary": "Toggles common reference geometry visibility before screenshots, exports or reviews.",
+    "bestFor": [
+      "Clean screenshots",
+      "Cleaner exports",
+      "Review preparation"
+    ],
+    "inputs": [
+      "Open SOLIDWORKS document"
+    ],
+    "filenameRules": "No export files created.",
+    "limitations": [
+      "Visibility behavior follows SOLIDWORKS document/view state."
+    ]
+  },
+  {
+    "slug": "rename-configurations-from-property",
+    "file": "RenameConfigurationsFromProperty.bas",
+    "title": "Rename Configurations from a Custom Property",
+    "shortTitle": "Rename configurations",
+    "category": "Custom Properties",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Part",
+      "Assembly"
+    ],
+    "outputs": [
+      "Renamed configurations"
+    ],
+    "keywords": "solidworks rename configurations custom property macro",
+    "summary": "Renames configurations using a chosen custom property, with duplicate-safe suffixes.",
+    "bestFor": [
+      "Configured part cleanup",
+      "Export naming consistency",
+      "Design table preparation"
+    ],
+    "inputs": [
+      "Open part or assembly",
+      "Property name to read from each configuration"
+    ],
+    "filenameRules": "No export files created.",
+    "limitations": [
+      "Renaming configurations can affect downstream references; test on copies first."
+    ]
+  },
+  {
+    "slug": "rename-sheets-views-from-model-properties",
+    "file": "RenameSheetsViewsFromModelProperties.bas",
+    "title": "Rename Drawing Sheets and Views from Model Properties",
+    "shortTitle": "Rename sheets/views",
+    "category": "Drawing Cleanup",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing"
+    ],
+    "outputs": [
+      "Renamed sheets/views"
+    ],
+    "keywords": "solidworks rename drawing sheets macro",
+    "summary": "Renames drawing sheets and views from referenced model properties such as PartNo and Description.",
+    "bestFor": [
+      "Drawing cleanup",
+      "Multi-sheet organization",
+      "Review readability"
+    ],
+    "inputs": [
+      "Open drawing with model views",
+      "Model custom properties"
+    ],
+    "filenameRules": "No export files created.",
+    "limitations": [
+      "Views without referenced models keep their current names.",
+      "Duplicate sheet names receive suffixes."
+    ]
+  },
+  {
+    "slug": "title-block-sync",
+    "file": "TitleBlockSyncFromModelProperties.bas",
+    "title": "Title Block Sync from Model Custom Properties",
+    "shortTitle": "Title block property sync",
+    "category": "Custom Properties",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing"
+    ],
+    "outputs": [
+      "Updated drawing properties"
+    ],
+    "keywords": "solidworks title block custom properties macro",
+    "summary": "Copies key custom properties from the first referenced model into the drawing so title blocks can resolve consistently.",
+    "bestFor": [
+      "Title block repair",
+      "Drawing release cleanup",
+      "Part number and revision consistency"
+    ],
+    "inputs": [
+      "Open drawing",
+      "Referenced model with PartNo, Revision, Description and Material properties"
+    ],
+    "filenameRules": "No export files created.",
+    "limitations": [
+      "Copies a conservative property list in v1.",
+      "Title block notes must already be linked to drawing custom properties."
+    ]
+  },
+  {
+    "slug": "bom-property-checker",
+    "file": "BomPropertyChecker.bas",
+    "title": "BOM Checker for Missing Properties",
+    "shortTitle": "BOM property checker",
+    "category": "BOM",
+    "difficulty": "Intermediate",
+    "documentTypes": [
+      "Drawing",
+      "Assembly"
+    ],
+    "outputs": [
+      "CSV report"
+    ],
+    "keywords": "solidworks bom custom property checker macro",
+    "summary": "Scans BOM rows for missing part number, description, material and revision values, then writes a CSV report.",
+    "bestFor": [
+      "Release readiness checks",
+      "BOM quality control",
+      "Property cleanup before export"
+    ],
+    "inputs": [
+      "Open drawing or assembly with BOM table"
+    ],
+    "filenameRules": "{document}_bom_property_check.csv.",
+    "limitations": [
+      "Checks visible BOM table text.",
+      "For workspace-wide BOM visibility and where-used search, use Solidise."
+    ]
+  }
+]

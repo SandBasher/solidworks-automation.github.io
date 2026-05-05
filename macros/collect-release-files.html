@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOLIDWORKS Macro: Collect Referenced Release Deliverables | SolidWorks Automation Macro Library</title>
+  <meta name="description" content="Copies already-generated deliverables for referenced files into one release folder.">
+  <link rel="canonical" href="https://solidworks-automation.github.io/macros/collect-release-files.html">
+  <meta property="og:title" content="SOLIDWORKS Macro: Collect Referenced Release Deliverables">
+  <meta property="og:description" content="Copies already-generated deliverables for referenced files into one release folder.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://solidworks-automation.github.io/macros/collect-release-files.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="SolidWorks Automation home">
+      <span class="brand-mark">SW</span>
+      <span>SolidWorks Automation</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="/macros/">Macros</a>
+      <a href="/guides/install-solidworks-macro.html">Install</a>
+      <a href="/guides/macro-vs-solidise.html">Macro vs Solidise</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero compact">
+    <p class="eyebrow">Release Package macro</p>
+    <h1>SOLIDWORKS Macro: Collect Referenced Release Deliverables</h1>
+    <p>Copies already-generated deliverables for referenced files into one release folder.</p>
+    <div class="hero-actions">
+      <a class="button" href="/macros/src/CollectReleaseDeliverables.bas">Download .bas source</a>
+      <a class="button secondary" href="/guides/install-solidworks-macro.html">Install guide</a>
+    </div>
+    <div class="badge-row large"><span class="badge">Assembly</span><span class="badge">Drawing</span><span class="badge">Copied PDF</span><span class="badge">DXF</span><span class="badge">DWG</span><span class="badge">STEP</span><span class="badge">Intermediate</span></div>
+  </section>
+  <section class="content-grid">
+    <article class="content-main">
+      <h2>What this macro does</h2>
+      <p>Copies already-generated deliverables for referenced files into one release folder.</p>
+      <h2>Best for</h2>
+      <ul><li>Release package assembly</li><li>Supplier zip preparation</li><li>Final document checks</li></ul>
+      <h2>Inputs</h2>
+      <ul><li>Open assembly or drawing</li><li>Destination folder</li></ul>
+      <h2>Outputs</h2>
+      <p>Copied PDF, DXF, DWG, STEP</p>
+      <h2>Filename rules</h2>
+      <p><code>Collects files with matching base filenames and PDF/DXF/DWG/STEP extensions.</code></p>
+      <h2>How to use</h2>
+      <ol>
+        <li>Test on copied SOLIDWORKS files first.</li>
+        <li>Download and import <code>CollectReleaseDeliverables.bas</code> into a SOLIDWORKS VBA macro project.</li>
+        <li>Open the required document type: Assembly, Drawing.</li>
+        <li>Run <code>main</code> from the macro editor or assign it to a toolbar button.</li>
+        <li>Review all generated files before using them for production release.</li>
+      </ol>
+      <h2>Limitations</h2>
+      <ul><li>Does not generate missing deliverables.</li><li>Searches same folders as referenced models by default.</li></ul>
+    </article>
+    <aside class="side-panel">
+      <h2>Macro details</h2>
+      <dl>
+        <dt>Source</dt><dd><a href="/macros/src/CollectReleaseDeliverables.bas">CollectReleaseDeliverables.bas</a></dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>Documents</dt><dd>Assembly, Drawing</dd>
+        <dt>Outputs</dt><dd>Copied PDF, DXF, DWG, STEP</dd>
+      </dl>
+      <p class="notice">Provided as-is. Test on copied files first. You are responsible for validating results before production use.</p>
+    </aside>
+  </section>
+  <section class="cta-band">
+    <div>
+      <p class="eyebrow">When macros become a workflow</p>
+      <h2>Use Solidise for indexed folders, BOM visibility, where-used search and repeatable batch export.</h2>
+      <p>Use this macro for a focused task. Use Solidise when you need repeatable export, BOM review, previews or where-used context across many files.</p>
+    </div>
+    <a class="button dark" href="https://solidise.com">Visit Solidise</a>
+  </section>
+  <section class="section">
+    <div class="section-heading">
+      <p class="eyebrow">Related macros</p>
+      <h2>Keep automating this workflow</h2>
+    </div>
+    <div class="card-grid"><article class="macro-card" data-category="Export" data-search="export drawing to pdf, dxf/dwg and step exports the active drawing to pdf, dxf and dwg, then exports the first referenced model to step with filename parts from custom properties. solidworks macro save pdf dxf step, solidworks export drawing pdf dxf step macro export pdf dxf dwg step drawing">
+    <div class="card-topline">
+      <span>Export</span>
+      <span>Intermediate</span>
+    </div>
+    <h3><a href="/macros/export-drawing-pdf-dxf-step.html">PDF + DXF/DWG + STEP exporter</a></h3>
+    <p>Exports the active drawing to PDF, DXF and DWG, then exports the first referenced model to STEP with filename parts from custom properties.</p>
+    <div class="badge-row"><span class="badge">Drawing</span><span class="badge">PDF</span><span class="badge">DXF</span><span class="badge">DWG</span><span class="badge">STEP</span></div>
+    <a class="text-link" href="/macros/src/ExportDrawingPdfDxfStep.bas">Download .bas source</a>
+  </article><article class="macro-card" data-category="Sheet Metal" data-search="sheet-metal flat pattern dxf batch export traverses the active assembly or part and exports sheet-metal flat patterns as dxf files using model properties where available. solidworks sheet metal dxf export macro, solidworks flat pattern dxf batch export sheet metal dxf assembly part">
+    <div class="card-topline">
+      <span>Sheet Metal</span>
+      <span>Advanced</span>
+    </div>
+    <h3><a href="/macros/sheet-metal-flat-pattern-dxf.html">Sheet-metal DXF batch export</a></h3>
+    <p>Traverses the active assembly or part and exports sheet-metal flat patterns as DXF files using model properties where available.</p>
+    <div class="badge-row"><span class="badge">Assembly</span><span class="badge">Part</span><span class="badge">DXF</span></div>
+    <a class="text-link" href="/macros/src/SheetMetalFlatPatternDxfBatch.bas">Download .bas source</a>
+  </article><article class="macro-card" data-category="Export" data-search="export all configurations to step exports every configuration of the active part or assembly to a separate step file. solidworks export configurations to step macro export step part assembly">
+    <div class="card-topline">
+      <span>Export</span>
+      <span>Beginner</span>
+    </div>
+    <h3><a href="/macros/export-configurations-step.html">Configurations to STEP</a></h3>
+    <p>Exports every configuration of the active part or assembly to a separate STEP file.</p>
+    <div class="badge-row"><span class="badge">Part</span><span class="badge">Assembly</span><span class="badge">STEP</span></div>
+    <a class="text-link" href="/macros/src/ExportConfigurationsToStep.bas">Download .bas source</a>
+  </article></div>
+  </section>
+  </main>
+  <footer class="site-footer">
+    <div>
+      <strong>SolidWorks Automation Macro Library</strong>
+      <p>Free VBA macros for export, BOM, custom-property, drawing and release workflows.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/LICENSE">MIT License</a>
+    </div>
+  </footer>
+</body>
+</html>
