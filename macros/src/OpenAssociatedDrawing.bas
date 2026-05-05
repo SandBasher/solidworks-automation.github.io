@@ -2,7 +2,7 @@ Attribute VB_Name = "OpenAssociatedDrawing"
 Option Explicit
 
 ' Open Associated Drawing
-' Free SOLIDWORKS VBA macro from solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: Active model or selected component
 

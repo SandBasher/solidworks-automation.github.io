@@ -2,7 +2,7 @@ Attribute VB_Name = "TitleBlockSyncFromModelProperties"
 Option Explicit
 
 ' Title Block Sync from Model Custom Properties
-' Free SOLIDWORKS VBA macro from solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: Open drawing; Referenced model with PartNo, Revision, Description and Material properties
 

@@ -2,7 +2,7 @@
 
 A practical SOLIDWORKS macro library for engineers who want to automate repetitive CAD work without building a full add-in. This repository contains free VBA `.bas` macro source files for drawing export, PDF/DXF/DWG/STEP/STL output, sheet-metal flat pattern DXF creation, BOM/table export, custom property cleanup, drawing navigation, release packages and daily SOLIDWORKS workflow shortcuts.
 
-The public website is built for GitHub Pages at `solidworks-automation.github.io`. The GitHub repository README also works as a pillar page for people searching for SOLIDWORKS macros, SOLIDWORKS VBA examples, SOLIDWORKS export automation, sheet-metal DXF macros, BOM export macros and custom property automation.
+The public website is built for GitHub Pages at `https://sandbasher.github.io/solidworks-automation.github.io/`. The GitHub repository README also works as a pillar page for people searching for SOLIDWORKS macros, SOLIDWORKS VBA examples, SOLIDWORKS export automation, sheet-metal DXF macros, BOM export macros and custom property automation.
 
 For larger indexed workflows across folders, BOMs, previews, where-used search and batch exports, see [solidworks automation](https://solidise.com).
 

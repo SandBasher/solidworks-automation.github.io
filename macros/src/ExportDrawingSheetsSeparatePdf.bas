@@ -2,7 +2,7 @@ Attribute VB_Name = "ExportDrawingSheetsSeparatePdf"
 Option Explicit
 
 ' Export Each Drawing Sheet as a Separate PDF
-' Free SOLIDWORKS VBA macro from solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: Open .SLDDRW drawing
 

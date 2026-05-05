@@ -2,7 +2,7 @@ Attribute VB_Name = "BomTableToCsvExcel"
 Option Explicit
 
 ' BOM and Table Export to CSV or Excel
-' Free SOLIDWORKS VBA macro from solidworks-automation.github.io
+' Free SOLIDWORKS VBA macro from sandbasher.github.io/solidworks-automation.github.io
 ' Provided as-is with no warranty. Test on copied files before production use.
 ' Assumptions: Open drawing or assembly containing BOM/table annotations
 
